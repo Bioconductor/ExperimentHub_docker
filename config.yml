@@ -1,0 +1,2 @@
+mysql_url: "mysql://ahuser:MYSQL_REMOTE_PASSWORD@db/experimenthub"
+sqlite_filename: "experimenthub.sqlite3"

@@ -1,0 +1,18 @@
+db:
+    image: "mysql"
+    environment:
+        MYSQL_ROOT_PASSWORD: mysecretpassword
+annotationhub:
+    environment:
+        MYSQL_ROOT_PASSWORD: mysecretpassword
+        MYSQL_REMOTE_PASSWORD: 
+    image: "dtenenba/experimenthubserver"
+    links:
+     - "db"
+    ports:
+     - "3000:3000"
+    volumes:
+     - "./HubServer:/HubServer"
+     - "./data:/data"
+    command:  "/tmp/start.sh"
+
