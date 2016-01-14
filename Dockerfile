@@ -1,4 +1,4 @@
-# call me bioconductor/experimenthubserver
+# call me bioconductor/experimenthub_docker
 
 FROM ubuntu:14.04
 

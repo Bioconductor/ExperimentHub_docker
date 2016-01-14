@@ -6,7 +6,7 @@ annotationhub:
     environment:
         MYSQL_ROOT_PASSWORD: mysecretpassword
         MYSQL_REMOTE_PASSWORD: 
-    image: "bioconductor/experimenthubserver"
+    image: "bioconductor/experimenthub_docker"
     links:
      - "db"
     ports:
