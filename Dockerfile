@@ -1,4 +1,4 @@
-# call me dtenenba/experimenthubserver
+# call me bioconductor/experimenthubserver
 
 FROM ubuntu:14.04
 
