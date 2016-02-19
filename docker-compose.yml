@@ -2,7 +2,7 @@ db:
     image: "mysql"
     environment:
         MYSQL_ROOT_PASSWORD: mysecretpassword
-annotationhub:
+experimenthub:
     environment:
         MYSQL_ROOT_PASSWORD: mysecretpassword
         MYSQL_REMOTE_PASSWORD: 

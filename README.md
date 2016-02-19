@@ -1,19 +1,8 @@
-
 # Docker Container for ExperimentHub Server
-
-## Important Note
-
-The way this Docker Container is currently set up,
-it can only be used by Bioconductor core members
-who have access to the production server
-and know its credentials.
-
-It should probably change so it can be used by
-anyone who wants to test recipes. But that
-is not going to happen right away.
 
 ## Table of Contents
 
+- [Overview](#overview)
 - [Setting up the docker container](#setup)
 	- [Prerequisites](#prerequisites)
     - [Run the continer](#run)
@@ -21,6 +10,20 @@ is not going to happen right away.
 - [Using the container](#use)
 - [Testing the changes](#test)
 - [Pushing changes to production](#push)
+
+## Overview
+
+This Docker Container provides an isolated environment for modifying the
+metadata records in the ExperimentHub database. It can be used for testing only
+or the modified database can be dumped and used to replace the production db.
+
+The docker can be used by anyone who has the password for the 'read only' user
+on the production server. With these credentials, a copy of the mysql
+production database is downloaded locally to the docker container. From within
+an R session, global options are set to point code from ExperimentHubData and
+ExperimentHub to the local db. Changes to the metadata (inserts, modifications
+or extractions) are made to the docker db instead of production.
+
 
 <a name="setup"></a>
 ## Setting up the docker container

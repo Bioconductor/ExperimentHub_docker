@@ -10,7 +10,7 @@ cd /tmp
 
 echo get database from master
 mysqldump --password=$MYSQL_REMOTE_PASSWORD -u ahuser -h
-annotationhub.bioconductor.org experimenthub | gzip > /tmp/dump.sql.gz
+experimenthub.bioconductor.org experimenthub | gzip > /tmp/dump.sql.gz
 
 echo create local database and user
 cat /tmp/start.sql | sed "s/MYSQL_REMOTE_PASSWORD/$MYSQL_REMOTE_PASSWORD/" |  mysql -u root --password=$MYSQL_ROOT_PASSWORD -h db
@@ -19,7 +19,7 @@ echo populate local database
 zcat /tmp/dump.sql.gz | mysql -u root --password=$MYSQL_ROOT_PASSWORD -h db
 experimenthub
 
-curl https://annotationhub.bioconductor.org/metadata/experimenthub.sqlite3 >
+curl https://experimenthub.bioconductor.org/metadata/experimenthub.sqlite3 >
 /HubServer/experimenthub.sqlite3
 
 cd /HubServer
