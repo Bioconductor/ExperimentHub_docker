@@ -5,7 +5,7 @@ FROM ubuntu:14.04
 EXPOSE 3000
 
 RUN DEBIAN_FRONTEND=noninteractive \
-    apt-get update && apt-get dist-upgrade -y 
+    apt-get update && apt-get dist-upgrade -y
 
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install -y \
@@ -34,6 +34,7 @@ RUN cd /tmp && curl -LO https://raw.githubusercontent.com/Bioconductor/HubServer
     gem install bundler && bundle install
 
 ENV AHS_DATABASE_TYPE mysql
+ENV HUBSERVER_DATABASE_TYPE mysql
 
 RUN echo hi2
 
@@ -41,5 +42,3 @@ ADD start.sh /tmp/start.sh
 ADD start.sql /tmp/start.sql
 ADD config.yml /tmp/config.yml
 ADD backup_db.sh /bin/backup_db.sh
-
-
