@@ -33,7 +33,6 @@ RUN rbenv global 2.2.1
 RUN cd /tmp && curl -LO https://raw.githubusercontent.com/Bioconductor/HubServer/master/Gemfile && \
     gem install bundler && bundle install
 
-ENV AHS_DATABASE_TYPE mysql
 ENV HUBSERVER_DATABASE_TYPE mysql
 
 RUN echo hi2
