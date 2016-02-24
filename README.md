@@ -134,11 +134,11 @@ You can interact with the docker db with R or mysql.
 
 To view the docker db from R you must first convert the mysql db to sqlite. From another terminal window do
 
-	docker exec -ti experimenthub_experimenthub_1 bash
+	docker exec -ti experimenthubdocker_experimenthub_1 bash
 
 That will log you in to the experimenthub server container. Then do the following:
 
-	cd /ExperimentHubServer3.0/
+	cd /HubServer/
 	ruby convert_db.rb 
 
 That will convert the mysql database to sqlite. You can then type
@@ -174,7 +174,7 @@ running) and start over again.
 You need to back up the database inside the docker 
 container. You can do it like this:
 
-     docker exec experimenthub_experimenthub_1 bash /bin/backup_db.sh
+     docker exec experimenthubdocker_experimenthub_1 bash /bin/backup_db.sh
 
 Note that `experimenthub_experimenthub_1` is the name of the
 docker container that has the experiment hub server on it; this
