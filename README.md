@@ -88,7 +88,7 @@ To verify that it is running, you can determine its URL
 ### Determining URL of server
 
 If you are on linux, the URL of the server is likely
-[http://localhost:3000/resource](http://localhost:3000/resource).
+[http://localhost:4000/resource](http://localhost:4000/resource).
 
 If you are in the cloud you need to use the public DNS name of your instance
 as your IP address.
@@ -96,7 +96,7 @@ as your IP address.
 If you are using boot2docker (deprecated by Docker Toolbox),
 you can determine your Docker host's IP address with the command
 `boot2docker ip`. If this returns `1.2.3.4`, your URL
-would be `http://1.2.3.4:3000/resource`. 
+would be `http://1.2.3.4:4000/resource`. 
 
 If you are using Docker Toolbox, the command to determine
 your Docker host's IP address is 
@@ -104,18 +104,18 @@ your Docker host's IP address is
     docker-machine ip default
 
 If this returns `1.2.3.4`, your URL would be
-`http://1.2.3.4:3000/resource`.
+`http://1.2.3.4:4000/resource`.
 
 <a name="use"></a>
 ## Using the container
 
 Start a new R session in a new terminal window. 
 Assuming your server URL 
-is `http://1.2.3.4:3000/resource`, enter the following
+is `http://1.2.3.4:4000/resource`, enter the following
 at the R prompt:
 
-    options(EXPERIMENT_HUB_SERVER_POST_URL="http://1.2.3.4:3000/resource") ## used by ExperimentHubData to insert metadata
-    options(EXPERIMENT_HUB_URL="http://1.2.3.4:3000")          ## used by ExperimentHub to get metadata
+    options(EXPERIMENT_HUB_SERVER_POST_URL="http://1.2.3.4:4000/resource") ## used by ExperimentHubData to insert metadata
+    options(EXPERIMENT_HUB_URL="http://1.2.3.4:4000")          ## used by ExperimentHub to get metadata
 
 Replace the URL with your actual URL, of course. These options must be set before loading `ExperimentHub` and `ExperimentHubData`.
 
