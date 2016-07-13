@@ -17,7 +17,7 @@ cat /tmp/start.sql | sed "s/MYSQL_REMOTE_PASSWORD/$MYSQL_REMOTE_PASSWORD/" |  my
 echo populate local database
 zcat /tmp/dump.sql.gz | mysql -u root --password=$MYSQL_ROOT_PASSWORD -h db experimenthub
 
-curl http://experimenthub.bioconductor.org:3000/metadata/experimenthub.sqlite3 > /HubServer/experimenthub.sqlite3
+curl https://experimenthub.bioconductor.org/metadata/experimenthub.sqlite3 > /HubServer/experimenthub.sqlite3
 
 cd /HubServer
 
