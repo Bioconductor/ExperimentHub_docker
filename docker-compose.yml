@@ -10,7 +10,7 @@ experimenthub:
     links:
      - "db"
     ports:
-     - "3000:3000"
+     - "4000:3000"
     volumes:
      - "./HubServer:/HubServer"
      - "./data:/data"
