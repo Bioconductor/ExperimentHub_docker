@@ -31,10 +31,9 @@ or extractions) are made to the docker db instead of production.
 <a name="prerequisites"></a>
 ### Prerequisites
 
-Set the environment variable `MYSQL_REMOTE_PASSWORD` to
-the correct value, found in the "ExperimentHub production
-server" section of the Google Doc "Credentials For
-Bioconductor Cloud resources".
+Set the environment variable `MYSQL_REMOTE_PASSWORD` to the password found in
+the "ExperimentHub production server" section of the Google Doc "Credentials
+For Bioconductor Cloud resources".
 
 The container will not work properly unless this is set.
 
@@ -109,15 +108,16 @@ If this returns `1.2.3.4`, your URL would be
 <a name="use"></a>
 ## Using the container
 
-Start a new R session in a new terminal window. 
-Assuming your server URL 
-is `http://1.2.3.4:4000/resource`, enter the following
-at the R prompt:
+Start a new R session in a new terminal window.  Assuming your server URL is
+`http://1.2.3.4:4000/resource`, enter the following at the R prompt:
 
-    options(EXPERIMENT_HUB_SERVER_POST_URL="http://1.2.3.4:4000/resource") ## used by ExperimentHubData to insert metadata
-    options(EXPERIMENT_HUB_URL="http://1.2.3.4:4000")          ## used by ExperimentHub to get metadata
+    ## used by ExperimentHubData to insert metadata
+    options(EXPERIMENT_HUB_SERVER_POST_URL="http://1.2.3.4:4000/resource")
+    ## used by ExperimentHub to get metadata
+    options(EXPERIMENT_HUB_URL="http://1.2.3.4:4000/resource")
 
-Replace the URL with your actual URL, of course. These options must be set before loading `ExperimentHub` and `ExperimentHubData`.
+Replace the URL with your actual URL, of course. These options must be set 
+before loading `ExperimentHub` and `ExperimentHubData`.
 
 	library(ExperimentHub)
 	library(ExperimentHubData)
