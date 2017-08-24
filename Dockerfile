@@ -25,7 +25,7 @@ RUN ./root/.rbenv/plugins/ruby-build/install.sh
 ENV PATH /root/.rbenv/bin:/root/.rbenv/shims:$PATH
 ENV CONFIGURE_OPTS --disable-install-doc
 
-#RUN source ~/.bash_profile
+RUN source ~/.bash_profile
 
 RUN rbenv install -v 2.2.1
 RUN rbenv global 2.2.1
