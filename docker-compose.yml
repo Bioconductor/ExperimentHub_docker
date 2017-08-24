@@ -14,5 +14,5 @@ experimenthub:
     volumes:
      - "./HubServer:/HubServer"
      - "./data:/data"
-    command:  "/tmp/start.sh"
+    command:  "/bin/bash --login /tmp/start.sh"
 
