@@ -1,6 +1,6 @@
 # call me bioconductor/experimenthub_docker
 
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 EXPOSE 3000
 
@@ -14,11 +14,11 @@ RUN DEBIAN_FRONTEND=noninteractive \
     libxml2-dev libxslt-dev libffi-dev mysql-client \
     libmysqlclient-dev
 
-RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 
 RUN echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 
-RUN git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 RUN ./root/.rbenv/plugins/ruby-build/install.sh
 
@@ -27,8 +27,8 @@ ENV CONFIGURE_OPTS --disable-install-doc
 
 #RUN source ~/.bash_profile
 
-RUN rbenv install -v 2.2.1
-RUN rbenv global 2.2.1
+RUN rbenv install -v 2.3.3
+RUN rbenv global 2.3.3
 
 RUN cd /tmp && curl -LO https://raw.githubusercontent.com/Bioconductor/HubServer/master/Gemfile && \
     gem install bundler && bundle install
