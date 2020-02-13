@@ -1,6 +1,6 @@
 # call me bioconductor/experimenthub_docker
 
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 EXPOSE 3000
 
@@ -27,11 +27,16 @@ ENV CONFIGURE_OPTS --disable-install-doc
 
 #RUN source ~/.bash_profile
 
-RUN rbenv install -v 2.3.3
-RUN rbenv global 2.3.3
+RUN rbenv install -v 2.6.5
+RUN rbenv global 2.6.5
 
 RUN cd /tmp && curl -LO https://raw.githubusercontent.com/Bioconductor/HubServer/master/Gemfile && \
     gem install bundler && bundle install
+
+# To Run/test locally when updating ruby gems
+#ADD Gemfile /tmp/Gemfile
+#RUN cd /tmp && gem install bundler && bundle install
+
 
 ENV HUBSERVER_DATABASE_TYPE mysql
 

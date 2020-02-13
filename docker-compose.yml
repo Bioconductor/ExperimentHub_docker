@@ -1,5 +1,5 @@
 db:
-    image: "mysql"
+    image: "mysql:8.0.19"
     environment:
         MYSQL_ROOT_PASSWORD: mysecretpassword
 experimenthub:
