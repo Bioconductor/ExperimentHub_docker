@@ -1,4 +1,8 @@
 drop database if exists experimenthub;
 create database experimenthub;
-grant all privileges on experimenthub.* to 'hubuser'@'%' identified by 'MYSQL_REMOTE_PASSWORD' with grant option;
+flush privileges;
+DROP USER IF EXISTS 'hubuser'@'%';
+flush privileges;
+CREATE USER 'hubuser'@'%' IDENTIFIED BY 'MYSQL_REMOTE_PASSWORD';
+GRANT ALL PRIVILEGES ON experimenthub.* TO 'hubuser'@'%' WITH GRANT OPTION;
 flush privileges;
