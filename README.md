@@ -42,6 +42,9 @@ You can set it by doing:
     export MYSQL_REMOTE_PASSWORD=XXX
 
 where XXX is replaced with the correct password.
+You may also need to export the database type for mysql or sqlite:
+
+    export HUBSERVER_DATABASE_TYPE=mysql
 
 [Install docker](https://docs.docker.com/installation/).
 If you are on Mac or Windows,
