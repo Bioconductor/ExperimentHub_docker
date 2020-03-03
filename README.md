@@ -41,17 +41,20 @@ You can set it by doing:
 
     export MYSQL_REMOTE_PASSWORD=XXX
 
-where XXX is replaced with the correct password.
+where XXX is replaced with the correct password. This password should also be 
+added to 'MYSQL_REMOTE_PASSWORD:' in the docker-compose.yml file.
+
 You may also need to export the database type for mysql or sqlite:
 
     export HUBSERVER_DATABASE_TYPE=mysql
 
-[Install docker](https://docs.docker.com/installation/).
-If you are on Mac or Windows,
-install [docker toolbox](https://www.docker.com/toolbox)
-instead.
-
-Also install [Docker Compose](https://docs.docker.com/compose/install/).
+If you are on Linux, install docker using
+[Docker Engine](https://docs.docker.com/installation/). Also install
+[Docker Compose](https://docs.docker.com/compose/install/).
+If you are on Mac or Windows, install Docker Desktop instead. You will not need 
+to install Docker Compose because it is included in Docker Desktop.
+[Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/),
+[Docker Desktop for Windows](https://docks.docker.com/docker-for-windows/install/).
 
 Clone the HubServer code to the same directory as this README:
 
